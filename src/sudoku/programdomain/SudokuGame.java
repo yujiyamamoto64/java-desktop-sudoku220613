@@ -2,6 +2,8 @@ package sudoku.programdomain;
 
 import java.io.Serializable;
 
+import sudoku.constants.GameState;
+
 public class SudokuGame implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
