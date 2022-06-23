@@ -3,6 +3,7 @@ package sudoku.userinterface.logic;
 import java.io.IOException;
 import java.security.MessageDigest;
 
+import sudoku.computationlogic.GameLogic;
 import sudoku.constants.GameState;
 import sudoku.constants.Messages;
 import sudoku.programdomain.IStorage;

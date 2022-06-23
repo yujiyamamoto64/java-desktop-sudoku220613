@@ -92,7 +92,7 @@ public class GameGenerator {
 			
 		}
 		
-		return newGrid;;
+		return newGrid;
 	}
 
 	private static void clearArray(int[][] newGrid) {
