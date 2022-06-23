@@ -8,7 +8,6 @@ public class SudokuTextField extends TextField {
 	private final int y;
 	
 	public SudokuTextField(int x, int y) {
-		super();
 		this.x = x;
 		this.y = y;
 	}

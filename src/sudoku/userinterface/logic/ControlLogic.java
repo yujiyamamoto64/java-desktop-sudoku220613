@@ -1,7 +1,6 @@
 package sudoku.userinterface.logic;
 
 import java.io.IOException;
-import java.security.MessageDigest;
 
 import sudoku.computationlogic.GameLogic;
 import sudoku.constants.GameState;
@@ -14,12 +13,11 @@ public class ControlLogic implements IUserInterfaceContract.EventListener {
 
 	private IStorage storage;
 	
-	private IUserInterfaceContract.View View;
+	private IUserInterfaceContract.View view;
 	
 	public ControlLogic(IStorage storage, sudoku.userinterface.IUserInterfaceContract.View view) {
-		super();
 		this.storage = storage;
-		View = view;
+		this.view = view;
 	}
 
 	@Override
@@ -34,14 +32,14 @@ public class ControlLogic implements IUserInterfaceContract.EventListener {
 			
 			storage.updateGameData(gameData);
 			
-			View.updateSquare(x, y, input);
+			view.updateSquare(x, y, input);
 			
 			if (gameData.getGameState() == GameState.COMPLETE) {
-				View.showDialog(Messages.GAME_COMPLETE);
+				view.showDialog(Messages.GAME_COMPLETE);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
-			View.showError(Messages.ERROR);
+			view.showError(Messages.ERROR);
 		}
 		
 	}
@@ -51,9 +49,9 @@ public class ControlLogic implements IUserInterfaceContract.EventListener {
 		try {
 			storage.updateGameData(GameLogic.getNewGame());
 			
-			View.updateBoard(storage.getGameData());
+			view.updateBoard(storage.getGameData());
 		} catch (IOException e) {
-			View.showError(Messages.ERROR);
+			view.showError(Messages.ERROR);
 		}
 		
 	}

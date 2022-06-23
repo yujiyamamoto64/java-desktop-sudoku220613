@@ -71,6 +71,8 @@ public class UserInterfaceImpl implements IUserInterfaceContract.View, EventHand
 			Rectangle horizontalLine = getLine(BOARD_PADDING, xAndY + 64 * index, thickness, BOARD_X_AND_Y);
 
 			root.getChildren().addAll(verticalLine, horizontalLine);
+			
+			index++;
 		}
 
 	}
@@ -150,7 +152,7 @@ public class UserInterfaceImpl implements IUserInterfaceContract.View, EventHand
 
 	private void drawBackground(Group root) {
 		Scene scene = new Scene(root, WINDOW_X, WINDOW_Y);
-		scene.setFill(BOARD_BACKGROUND_COLOR);
+		scene.setFill(WINDOW_BACKGROUND_COLOR);
 		stage.setScene(scene);
 	}
 
@@ -166,8 +168,7 @@ public class UserInterfaceImpl implements IUserInterfaceContract.View, EventHand
 
 		String value = Integer.toString(input);
 
-		if (value.equals("0"))
-			value = " ";
+		if (value.equals("0")) value = "";
 
 		tile.textProperty().setValue(value);
 	}
