@@ -3,6 +3,7 @@ package sudoku;
 import java.io.IOException;
 
 import javafx.stage.Stage;
+import sudoku.buildlogic.SudokuBuildLogic;
 import sudoku.userinterface.IUserInterfaceContract;
 import sudoku.userinterface.UserInterfaceImpl;
 
